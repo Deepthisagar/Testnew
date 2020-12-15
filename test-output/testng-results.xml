@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-12T02:23:14Z" name="Default suite" finished-at="2020-12-12T02:23:35Z" duration-ms="20573">
+  <suite started-at="2020-12-14T09:44:56Z" name="Default suite" finished-at="2020-12-14T09:45:15Z" duration-ms="18704">
     <groups>
     </groups>
-    <test started-at="2020-12-12T02:23:14Z" name="Default test" finished-at="2020-12-12T02:23:35Z" duration-ms="20573">
+    <test started-at="2020-12-14T09:44:56Z" name="Default test" finished-at="2020-12-14T09:45:15Z" duration-ms="18704">
       <class name="ServiceNow.ExternalCert.CertTypeTest">
-        <test-method is-config="true" signature="extentReporting()[pri:0, instance:ServiceNow.ExternalCert.CertTypeTest@957e06]" started-at="2020-12-12T02:23:14Z" name="extentReporting" finished-at="2020-12-12T02:23:15Z" duration-ms="147" status="PASS">
+        <test-method is-config="true" signature="extentReporting()[pri:0, instance:ServiceNow.ExternalCert.CertTypeTest@1c3b9394]" started-at="2020-12-14T09:44:56Z" name="extentReporting" finished-at="2020-12-14T09:44:56Z" duration-ms="98" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentReporting -->
-        <test-method signature="ServiceNow()[pri:0, instance:ServiceNow.ExternalCert.CertTypeTest@957e06]" started-at="2020-12-12T02:23:15Z" name="ServiceNow" finished-at="2020-12-12T02:23:35Z" duration-ms="20412" status="PASS">
+        <test-method signature="ServiceNow()[pri:0, instance:ServiceNow.ExternalCert.CertTypeTest@1c3b9394]" started-at="2020-12-14T09:44:56Z" name="ServiceNow" finished-at="2020-12-14T09:45:15Z" duration-ms="18594" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ServiceNow -->

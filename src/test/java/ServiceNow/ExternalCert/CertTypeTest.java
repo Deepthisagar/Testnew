@@ -1,11 +1,14 @@
 package ServiceNow.ExternalCert;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -14,6 +17,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -25,11 +31,11 @@ import com.aventstack.extentreports.reporter.*;
 
 public class CertTypeTest {
 	ExtentReports extent;
+	Logger log=  LogManager.getLogger(CertTypeTest.class.getName());
 	@BeforeTest
 	public void extentReporting()
 	{
 		
-				
 		String path ="\\Users\\deepthiandugula\\Documents\\reports\\index.html";
 
 	    ExtentSparkReporter reporter = new ExtentSparkReporter(path);
@@ -45,6 +51,8 @@ public class CertTypeTest {
 		extent.attachReporter(reporter);
 
 		extent.setSystemInfo("Tester", "Rahul Shetty");
+		log.info("finished reports creation");
+		
 		
 	}
 	
@@ -52,6 +60,10 @@ public class CertTypeTest {
 		public  void ServiceNow() throws InterruptedException, IOException
 	{
 	ExtentTest test= extent.createTest("ServiceNow");
+	//DesiredCapabilities caps = DesiredCapabilities.chrome();
+	//caps.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, false);
+	//ChromeOptions options = new ChromeOptions();
+			//options.merge(caps);
 		System.setProperty("webdriver.chrome.driver", "/Users/deepthiandugula/Downloads/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://bupaaus.service-now.com/bess/?id=is_sc_cat_item_default&sys_id=8e015ce0dbe1cc10bd40abf34a961934&sysparm_category=04a08b5cdbc4770000e496888a961970");
@@ -78,12 +90,13 @@ public class CertTypeTest {
 		Boolean value1 = drpdwn.isDisplayed();
 		  
 		  drpdwn.sendKeys("New Certificate Request", Keys.ENTER); 
+		
 		  TakesScreenshot tsh =(TakesScreenshot)driver;
 		   File Source = tsh.getScreenshotAs(OutputType.FILE);
 		  // FileUtils.copyFile(Source, "/Users/deepthiandugula/eclipse-workspace/ExternalCert");
 		   String path = "/Users/deepthiandugula/eclipse-workspace/ExternalCert/"+"Testcase"+".png";
 			FileUtils.copyFile(Source, new File(path));
-		  
+		  log.info("took screenshot");
 		  driver.close();
 		 
 		  test.log(Status.PASS, "Passed Testcase");
