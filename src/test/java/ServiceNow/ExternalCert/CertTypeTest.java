@@ -72,6 +72,7 @@ public class CertTypeTest {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", submit1);
 		Thread.sleep(5000);
+		System.out.println("testing");
 		driver.manage().window().maximize();
 		WebElement pswd =driver.findElement(By.xpath("//div/span/input[@class ='password-with-toggle']"));
 		pswd.sendKeys("Very$!mple@123");
